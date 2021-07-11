@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
 	- [Generator](#generator)
@@ -14,13 +14,38 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Introduction
+--------
+
+## Background
+
+###### Introduction
 
 *Oh_My_TensorRT_ToolKit* is **a wrapped toolkit for GPU performance test using various NN models based on [TensorRT official source code](https://github.com/NVIDIA/TensorRT).** 
 
 > I develop this toolkit only for providing the assistance of GPU performance test when we use the official TensorRT tools. Besides, this toolkit could be highly customed in different versions of TensorRT, please refer to the [Contributing](#contributing) part.
 
- 
+ *Oh_My_TensorRT_ToolKit* needs serveral procedures to established, which could be found in [Usage](#usage) part.
+
+###### Environment
+
+ *Oh_My_TensorRT_ToolKit* should be used on GPU environment, and our standard GPU device and drivers are:
+
+- **GPU Device**: **A100-PCIE-40GB with MIG mechanism** (temporarily 3 MIG devices)
+
+```shell
+GPU 0: A100-PCIE-40GB (UUID: GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23)
+  MIG 4g.20gb Device 0: (UUID: MIG-GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23/2/0)
+  MIG 2g.10gb Device 1: (UUID: MIG-GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23/3/0)
+  MIG 1g.5gb Device 2: (UUID: MIG-GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23/9/0)
+```
+
+​	More introductions on MIG mechanism could be found in []()
+
+- d
+
+
+
+
 
 Writing READMEs is way too hard, and keeping them maintained is difficult. By offloading this process - making writing easier, making editing easier, making it clear whether or not an edit is up to spec or not - you can spend less time worrying about whether or not your initial documentation is good, and spend more time writing and using code.
 
