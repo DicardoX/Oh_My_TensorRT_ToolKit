@@ -5,10 +5,10 @@
 ## Table of Contents
 
 - [Background](#background)
-- [Install](#install)
+- [Installation](#installation)
 - [Usage](#usage)
 	- [Generator](#generator)
-- [Example Readmes](#example-readmes)
+- [Examples](#examples)
 - [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
@@ -24,9 +24,9 @@
 
 > I develop this toolkit only for providing the assistance of GPU performance test when we use the official TensorRT tools. Besides, this toolkit could be highly customed in different versions of TensorRT, please refer to the [Contributing](#contributing) part.
 
- *Oh_My_TensorRT_ToolKit* needs serveral procedures to established, which could be found in [Usage](#usage) part.
+ *Oh_My_TensorRT_ToolKit* needs serveral procedures to established, which could be found in [Usage](#usage) part. We provide both *Pytorch* and *Tensorflow* examples in [Examples](#examples) part.
 
-###### Environment
+###### GPU Environment
 
  *Oh_My_TensorRT_ToolKit* should be used on GPU environment, and our standard GPU device and drivers are:
 
@@ -39,27 +39,24 @@ GPU 0: A100-PCIE-40GB (UUID: GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23)
   MIG 1g.5gb Device 2: (UUID: MIG-GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23/9/0)
 ```
 
-​	More introductions on MIG mechanism could be found in []()
+​	More introductions on MIG mechanism could be found in [Basic on MIG Tutorial](https://github.com/DicardoX/Oh_My_TensorRT_ToolKit/blob/main/docs/Basic_on_MIG.md).
 
-- d
+- **Drivers**:
+    1. NVIDIA-SMI 460.80, Driver Version: 460.80
+    2. **CUDA Version**: 11.2
+    3. **TensorRT Version**: 8.0.1.6
+    4. **Torch Version**: 1.9.0+cu111 (Customed configurations could be found in [Pytorch Official](https://pytorch.org/get-started/locally/))
+    5. **Torchvision Version**: 0.10.0+cu111
+    6. **Pytorch-pretrained-bert Version**: 0.6.2 (This is for the usage of bert model)
+    7. **Onnx Version**: 1.9.0
+    8. **Netron Version**: 5.0.0
+    9. **Onnxruntime Version**: 1.2.0
+    10. **Tensorflow Version**: 2.5.0
+    11. **H5py Version**: 3.1.0
 
+------------
 
-
-
-
-Writing READMEs is way too hard, and keeping them maintained is difficult. By offloading this process - making writing easier, making editing easier, making it clear whether or not an edit is up to spec or not - you can spend less time worrying about whether or not your initial documentation is good, and spend more time writing and using code.
-
-By having a standard, users can spend less time searching for the information they want. They can also build tools to gather search terms from descriptions, to automatically run example code, to check licensing, and so on.
-
-The goals for this repository are:
-
-1. A well defined **specification**. This can be found in the [Spec document](spec.md). It is a constant work in progress; please open issues to discuss changes.
-2. **An example README**. This Readme is fully standard-readme compliant, and there are more examples in the `example-readmes` folder.
-3. A **linter** that can be used to look at errors in a given Readme. Please refer to the [tracking issue](https://github.com/RichardLitt/standard-readme/issues/5).
-4. A **generator** that can be used to quickly scaffold out new READMEs. See [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme).
-5. A **compliant badge** for users. See [the badge](#badge).
-
-## Install
+## Installation
 
 This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
 
@@ -80,7 +77,7 @@ $ standard-readme-spec
 
 To use the generator, look at [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). There is a global executable to run the generator in that package, aliased as `standard-readme`.
 
-## Example Readmes
+## Examples
 
 To see how the specification has been applied, see the [example-readmes](example-readmes/).
 
