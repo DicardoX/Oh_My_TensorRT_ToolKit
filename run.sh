@@ -302,12 +302,3 @@ if [ ${plot_state} = 0 ];then
 	echo ""
 	echo "Plot work is completed! Save pics to path: './output_figs/'"
 fi
-
-
-
-
-
-
-
-
-
