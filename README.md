@@ -7,11 +7,6 @@
 - [Background](#background)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Examples](#examples)
-- [Related Efforts](#related-efforts)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
 
 --------
 
@@ -122,41 +117,57 @@ After we finish the installation of official TensorRT, we begin to install *Oh_M
 
 ## Usage
 
-This is only a documentation package. You can print out [spec.md](spec.md) to your console:
+###### run.sh
 
+**The `run.sh` script is our main worker for this toolkit.** Its option configuration is:
 
+```shell
+bash ./run.sh -m [MODEL_NAME] -b [MAX_BATCH_SIZE] -t [TYPE_MODE] -p -h
+```
 
-### Generator
+- `MODEL_NAME`: **the name of model to be tested** (chosen in **[bert_16, bert_64, bert_128, resnet_50, resnet_101, resnet_152]**, default = bert_16).
+- `MAX_BATCH_SIZE`: **max batch size of the chosen model in inference** (pow of 2, default = 128).
+- `TYPE_MODE`: 0 / 1 (**0 for is_training, 1 for is_inference**)
+- `[-p]`: **plot result for inference stage** (Path: './output_figs/', 0 for is_plot, 1 for not_plot)
+- `[-h]`: **help message**
 
-To use the generator, look at [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). There is a global executable to run the generator in that package, aliased as `standard-readme`.
+Notice that **the path of the onnx & engine files are set in the shell or python scripts, feel free to modify it if needed**.
 
-## Examples
+###### Workload
 
-To see how the specification has been applied, see the [example-readmes](example-readmes/).
+We take bert_16 as our example to show the workload of our *Oh_My_TensorRT_ToolKit*. Note that bert_16 has a sequence length equals to 16.
 
-## Related Efforts
+1. **Generate onnx model**.
 
-- [Art of Readme](https://github.com/noffle/art-of-readme) - 💌 Learn the art of writing quality READMEs.
-- [open-source-template](https://github.com/davidbgk/open-source-template/) - A README template to encourage open-source contributions.
+    ```shell
+    cd TensorRT-8.0.1.6/custom_python_samples/tensorrt_bert
+    python bert_to_onnx_dynamic_seq.py --seq_len 16
+    # For resnet, the command should be:
+    # cd TensorRT-8.0.1.6/custom_python_samples/tensorrt_resnet
+    # python main.py --layer_num [LAYER_NUM for 50, 101 or 152]
+    ```
 
-## Maintainers
+    The `.onnx` model should be saved as `TensorRT-8.0.1.6/custom_python_samples/tensorrt_bert/onnx/bert_16.onnx`.
 
-[@RichardLitt](https://github.com/RichardLitt).
+2. **Generate engine file**. (Training process)
 
-## Contributing
+    ```shell
+    cd TensorRT-8.0.1.6
+    # Training process for bert_16, dynamic range of batch size from 1 to 128
+    bash ./run.sh -m bert_16 -b 128 -t 0 
+    ```
 
-Feel free to dive in! [Open an issue](https://github.com/RichardLitt/standard-readme/issues/new) or submit PRs.
+    The `.trt` engine file should be saved as `TensorRT-8.0.1.6/engines/bert_16_dynamic.trt`.
 
-Standard Readme follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
+3. **Operate multiple inference processes**. (Inference process)
 
-### Contributors
+    ```shell
+    cd TensorRT-8.0.1.6
+    # Inference process for bert_16, this should run inference process on each MIG device and each bach size
+    bash ./run.sh -m bert_16 -b 128 -t 1 -p
+    ```
 
-This project exists thanks to all the people who contribute. 
-<a href="https://github.com/RichardLitt/standard-readme/graphs/contributors"><img src="https://opencollective.com/standard-readme/contributors.svg?width=890&button=false" /></a>
+    The performance summary should be saved as `TensorRT-8.0.1.6/performance_summary.txt`, and the visible plot results should be saved as `TensorRT-8.0.1.6/output_figs`.
 
+----------
 
-## License
-
-[MIT](LICENSE) © Richard Littauer
-
-A wrapped toolkit for GPU performance test using various NN models based on TensorRT official source code.
