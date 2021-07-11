@@ -1,0 +1,39 @@
+
+--------------------------------------------------------------------
+Device Name: A100-PCIE-40GB MIG 1g.5gb
+--------------------------------------------------------------------
+Batch Size: 1 | Throughput: 189.65 (qps) | Latency: 5.2597 (ms)
+Batch Size: 2 | Throughput: 246.59 (qps) | Latency: 8.0770 (ms)
+Batch Size: 4 | Throughput: 262.77 (qps) | Latency: 15.1449 (ms)
+Batch Size: 8 | Throughput: 319.43 (qps) | Latency: 24.7680 (ms)
+Batch Size: 16 | Throughput: 355.12 (qps) | Latency: 44.2611 (ms)
+Batch Size: 32 | Throughput: 379.02 (qps) | Latency: 81.3147 (ms)
+Batch Size: 64 | Throughput: 354.52 (qps) | Latency: 169.2430 (ms)
+Batch Size: 128 | Throughput: 342.33 (qps) | Latency: 334.9070 (ms)
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+Device Name: A100-PCIE-40GB MIG 2g.10gb
+--------------------------------------------------------------------
+Batch Size: 1 | Throughput: 307.90 (qps) | Latency: 3.2399 (ms)
+Batch Size: 2 | Throughput: 475.16 (qps) | Latency: 4.1975 (ms)
+Batch Size: 4 | Throughput: 541.92 (qps) | Latency: 7.3600 (ms)
+Batch Size: 8 | Throughput: 677.38 (qps) | Latency: 11.7388 (ms)
+Batch Size: 16 | Throughput: 702.59 (qps) | Latency: 22.6015 (ms)
+Batch Size: 32 | Throughput: 764.57 (qps) | Latency: 41.3131 (ms)
+Batch Size: 64 | Throughput: 753.37 (qps) | Latency: 82.5670 (ms)
+Batch Size: 128 | Throughput: 730.95 (qps) | Latency: 163.3080 (ms)
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+Device Name: A100-PCIE-40GB MIG 4g.20gb
+--------------------------------------------------------------------
+Batch Size: 1 | Throughput: 449.50 (qps) | Latency: 2.2190 (ms)
+Batch Size: 2 | Throughput: 743.94 (qps) | Latency: 2.6815 (ms)
+Batch Size: 4 | Throughput: 982.12 (qps) | Latency: 4.0604 (ms)
+Batch Size: 8 | Throughput: 1312.35 (qps) | Latency: 6.0759 (ms)
+Batch Size: 16 | Throughput: 1356.12 (qps) | Latency: 11.7320 (ms)
+Batch Size: 32 | Throughput: 1424.85 (qps) | Latency: 22.2216 (ms)
+Batch Size: 64 | Throughput: 1473.56 (qps) | Latency: 42.8390 (ms)
+Batch Size: 128 | Throughput: 1490.73 (qps) | Latency: 83.1903 (ms)
+--------------------------------------------------------------------

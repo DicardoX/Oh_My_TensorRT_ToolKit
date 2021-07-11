@@ -1,0 +1,8 @@
+Batch size: 1 | Average latency per batch: 2.311 ms | Throughput: 432 
+Batch size: 2 | Average latency per batch: 3.109 ms | Throughput: 643 
+Batch size: 4 | Average latency per batch: 4.264 ms | Throughput: 938 
+Batch size: 8 | Average latency per batch: 8.210 ms | Throughput: 974 
+Batch size: 16 | Average latency per batch: 11.835 ms | Throughput: 1351 
+Batch size: 32 | Average latency per batch: 15.315 ms | Throughput: 2089 
+Batch size: 64 | Average latency per batch: 34.507 ms | Throughput: 1854 
+Batch size: 128 | Average latency per batch: 72.480 ms | Throughput: 1766 
