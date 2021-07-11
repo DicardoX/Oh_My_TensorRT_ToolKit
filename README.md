@@ -24,7 +24,16 @@
 
 > I develop this toolkit only for providing the assistance of GPU performance test when we use the official TensorRT tools. Besides, this toolkit could be highly customed in different versions of TensorRT, please refer to the [Contributing](#contributing) part.
 
- *Oh_My_TensorRT_ToolKit* needs serveral procedures to established, which could be found in [Usage](#usage) part. We provide both *Pytorch* and *Tensorflow* examples in [Examples](#examples) part.
+ *Oh_My_TensorRT_ToolKit* needs serveral procedures to established, which could be found in [Usage](#usage) part. We implement this toolkit by basicly using the [./trtexec](https://github.com/NVIDIA/TensorRT/tree/master/samples/opensource/trtexec), a TensorRT Command-Line Wrapper provided by NVIDIA TensorRT official samples, in our scripts.
+
+The **workload** of *Oh_My_TensorRT_ToolKit* is:
+
+1. **Generate Onnx models from our Pytorch / Tensorflow models**. We provide both *Pytorch* and *Tensorflow* examples in [Examples](#examples) part.
+2. **Generate dynamic engines from the Onnx models by using ./trtexec tool**.
+3. **Perform inference tests with the engines in different MIG devices and batch sizes**.
+4. **Format output the throughput / latency statistical results**.
+
+As for the generation of onnx model, we provide both *Pytorch* and *Tensorflow* examples in [Examples](#examples) part.
 
 ###### GPU Environment
 
@@ -57,6 +66,8 @@ GPU 0: A100-PCIE-40GB (UUID: GPU-9de3d0e8-33f5-10dc-0c79-2c88a7ab0a23)
 ------------
 
 ## Installation
+
+
 
 This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
 
