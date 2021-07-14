@@ -4,6 +4,11 @@
 
 import re
 import os
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--model_name", default="bert_16")  # Model name
+args = parser.parse_args()
 
 
 def get_info_dict(log_dir_path):
@@ -85,6 +90,7 @@ def format_output(info):
             f.write(message + "\n")
     f.close()
 
+
 if __name__ == '__main__':
-    info_dict = get_info_dict("./log")
+    info_dict = get_info_dict("./log/" + args.model_name)
     format_output(info_dict)

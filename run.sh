@@ -80,10 +80,10 @@ bert_func(){
 
 		# ----------------------------- Check Log Dir --------------------------
 		# Check the log dir and recreate it
-		if [ -e ./log ];then
-			rm -rf ./log
+		if [ -e ./log/${model_name} ];then
+			rm -rf ./log/${model_name}
 		fi
-		mkdir log
+		mkdir ./log/${model_name}
 		# ----------------------------------------------------------------------
 
 		# ----------------------------- Main Func Loop -------------------------
@@ -93,7 +93,7 @@ bert_func(){
 			j="${#gpu_devices[@]}"
 			for((k=1;k<${j}+1;k++))
 			do
-				CUDA_VISIBLE_DEVICES=${gpu_devices[${k}]} ./bin/trtexec --loadEngine=./engines/bert_${3}_dynamic.trt --shapes=input_ids:${i}x${3},token_type_ids:${i}x${3},attention_mask:${i}x${3} > ./log/device_${k}_bs_${i}.txt
+				CUDA_VISIBLE_DEVICES=${gpu_devices[${k}]} ./bin/trtexec --loadEngine=./engines/bert_${3}_dynamic.trt --iterations=500 --shapes=input_ids:${i}x${3},token_type_ids:${i}x${3},attention_mask:${i}x${3} > ./log/${model_name}/device_${k}_bs_${i}.txt
 				# sleep 30
 			done
 		done
@@ -170,10 +170,10 @@ resnet_func(){
 
 		# ----------------------------- Check Log Dir --------------------------
 		# Check the log dir and recreate it
-		if [ -e ./log ];then
-			rm -rf ./log
+		if [ -e ./log/${model_name} ];then
+			rm -rf ./log/${model_name}
 		fi
-		mkdir log
+		mkdir ./log/${model_name}
 		# ----------------------------------------------------------------------
 
 		# ----------------------------- Main Func Loop -------------------------
@@ -183,7 +183,7 @@ resnet_func(){
 			j="${#gpu_devices[@]}"
 			for((k=1;k<${j}+1;k++))
 			do
-				CUDA_VISIBLE_DEVICES=${gpu_devices[${k}]} ./bin/trtexec --loadEngine=./engines/resnet_${3}_dynamic.trt --shapes=input:${i}x3x224x224 > ./log/device_${k}_bs_${i}.txt
+				CUDA_VISIBLE_DEVICES=${gpu_devices[${k}]} ./bin/trtexec --loadEngine=./engines/resnet_${3}_dynamic.trt --iterations=500 --shapes=input:${i}x3x224x224 > ./log/${model_name}/device_${k}_bs_${i}.txt
 				# sleep 30
 			done
 		done
@@ -291,7 +291,7 @@ fi
 echo ""
 echo ""
 echo "#################################### PERFORMANCE SUMMARY ####################################"
-python format_output.py
+python format_output.py --model_name ${model_name}
 
 # Plot result
 if [ ${plot_state} = 0 ];then
@@ -302,3 +302,12 @@ if [ ${plot_state} = 0 ];then
 	echo ""
 	echo "Plot work is completed! Save pics to path: './output_figs/'"
 fi
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8001] # ./bin/trtexec --loadEngine=./engines/bert_16_dynamic.trt --iterations=500 --shapes=input_ids:32x16,token_type_ids:32x16,attention_mask:32x16
+[07/12/2021-11:54:46] [I] === Model Options ===
+[07/12/2021-11:54:46] [I] Format: *
+[07/12/2021-11:54:46] [I] Model: 
+[07/12/2021-11:54:46] [I] Output:
+[07/12/2021-11:54:46] [I] === Build Options ===
+[07/12/2021-11:54:46] [I] Max batch: explicit
+[07/12/2021-11:54:46] [I] Workspace: 16 MiB
+[07/12/2021-11:54:46] [I] minTiming: 1
+[07/12/2021-11:54:46] [I] avgTiming: 8
+[07/12/2021-11:54:46] [I] Precision: FP32
+[07/12/2021-11:54:46] [I] Calibration: 
+[07/12/2021-11:54:46] [I] Refit: Disabled
+[07/12/2021-11:54:46] [I] Sparsity: Disabled
+[07/12/2021-11:54:46] [I] Safe mode: Disabled
+[07/12/2021-11:54:46] [I] Restricted mode: Disabled
+[07/12/2021-11:54:46] [I] Save engine: 
+[07/12/2021-11:54:46] [I] Load engine: ./engines/bert_16_dynamic.trt
+[07/12/2021-11:54:46] [I] NVTX verbosity: 0
+[07/12/2021-11:54:46] [I] Tactic sources: Using default tactic sources
+[07/12/2021-11:54:46] [I] timingCacheMode: local
+[07/12/2021-11:54:46] [I] timingCacheFile: 
+[07/12/2021-11:54:46] [I] Input(s)s format: fp32:CHW
+[07/12/2021-11:54:46] [I] Output(s)s format: fp32:CHW
+[07/12/2021-11:54:46] [I] Input build shape: input_ids=32x16+32x16+32x16
+[07/12/2021-11:54:46] [I] Input build shape: attention_mask=32x16+32x16+32x16
+[07/12/2021-11:54:46] [I] Input build shape: token_type_ids=32x16+32x16+32x16
+[07/12/2021-11:54:46] [I] Input calibration shapes: model
+[07/12/2021-11:54:46] [I] === System Options ===
+[07/12/2021-11:54:46] [I] Device: 0
+[07/12/2021-11:54:46] [I] DLACore: 
+[07/12/2021-11:54:46] [I] Plugins:
+[07/12/2021-11:54:46] [I] === Inference Options ===
+[07/12/2021-11:54:46] [I] Batch: Explicit
+[07/12/2021-11:54:46] [I] Input inference shape: token_type_ids=32x16
+[07/12/2021-11:54:46] [I] Input inference shape: attention_mask=32x16
+[07/12/2021-11:54:46] [I] Input inference shape: input_ids=32x16
+[07/12/2021-11:54:46] [I] Iterations: 500
+[07/12/2021-11:54:46] [I] Duration: 3s (+ 200ms warm up)
+[07/12/2021-11:54:46] [I] Sleep time: 0ms
+[07/12/2021-11:54:46] [I] Streams: 1
+[07/12/2021-11:54:46] [I] ExposeDMA: Disabled
+[07/12/2021-11:54:46] [I] Data transfers: Enabled
+[07/12/2021-11:54:46] [I] Spin-wait: Disabled
+[07/12/2021-11:54:46] [I] Multithreading: Disabled
+[07/12/2021-11:54:46] [I] CUDA Graph: Disabled
+[07/12/2021-11:54:46] [I] Separate profiling: Disabled
+[07/12/2021-11:54:46] [I] Time Deserialize: Disabled
+[07/12/2021-11:54:46] [I] Time Refit: Disabled
+[07/12/2021-11:54:46] [I] Skip inference: Disabled
+[07/12/2021-11:54:46] [I] Inputs:
+[07/12/2021-11:54:46] [I] === Reporting Options ===
+[07/12/2021-11:54:46] [I] Verbose: Disabled
+[07/12/2021-11:54:46] [I] Averages: 10 inferences
+[07/12/2021-11:54:46] [I] Percentile: 99
+[07/12/2021-11:54:46] [I] Dump refittable layers:Disabled
+[07/12/2021-11:54:46] [I] Dump output: Disabled
+[07/12/2021-11:54:46] [I] Profile: Disabled
+[07/12/2021-11:54:46] [I] Export timing to JSON file: 
+[07/12/2021-11:54:46] [I] Export output to JSON file: 
+[07/12/2021-11:54:46] [I] Export profile to JSON file: 
+[07/12/2021-11:54:46] [I] 
+[07/12/2021-11:54:46] [I] === Device Information ===
+[07/12/2021-11:54:46] [I] Selected Device: A100-PCIE-40GB MIG 1g.5gb
+[07/12/2021-11:54:46] [I] Compute Capability: 8.0
+[07/12/2021-11:54:46] [I] SMs: 14
+[07/12/2021-11:54:46] [I] Compute Clock Rate: 1.41 GHz
+[07/12/2021-11:54:46] [I] Device Global Memory: 4864 MiB
+[07/12/2021-11:54:46] [I] Shared Memory per SM: 164 KiB
+[07/12/2021-11:54:46] [I] Memory Bus Width: 640 bits (ECC enabled)
+[07/12/2021-11:54:46] [I] Memory Clock Rate: 1.215 GHz
+[07/12/2021-11:54:46] [I] 
+[07/12/2021-11:54:46] [I] TensorRT version: 8001
+[07/12/2021-11:54:49] [I] [TRT] [MemUsageChange] Init CUDA: CPU +503, GPU +0, now: CPU 1288, GPU 3262 (MiB)
+[07/12/2021-11:54:49] [I] [TRT] Loaded engine size: 778 MB
+[07/12/2021-11:54:49] [I] [TRT] [MemUsageSnapshot] deserializeCudaEngine begin: CPU 1288 MiB, GPU 3262 MiB
+[07/12/2021-11:54:51] [07/12/2021-11:54:54] [07/12/2021-11:54:54] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +653, GPU +272, now: CPU 1949, GPU 4278 (MiB)
+[07/12/2021-11:54:55] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +369, GPU +266, now: CPU 2318, GPU 4544 (MiB)
+[07/12/2021-11:54:55] [07/12/2021-11:54:55] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 2318, GPU 4526 (MiB)
+[07/12/2021-11:54:55] [I] [TRT] [MemUsageSnapshot] deserializeCudaEngine end: CPU 2318 MiB, GPU 4526 MiB
+[07/12/2021-11:54:55] [I] Engine loaded in 9.04291 sec.
+[07/12/2021-11:54:55] [I] [TRT] [MemUsageSnapshot] ExecutionContext creation begin: CPU 1540 MiB, GPU 4526 MiB
+[07/12/2021-11:54:55] [07/12/2021-11:54:56] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +10, now: CPU 1540, GPU 4536 (MiB)
+[07/12/2021-11:54:56] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +0, GPU +8, now: CPU 1540, GPU 4544 (MiB)
+[07/12/2021-11:54:56] [07/12/2021-11:54:57] [I] [TRT] [MemUsageSnapshot] ExecutionContext creation end: CPU 1593 MiB, GPU 4724 MiB
+[07/12/2021-11:54:57] [I] Created input binding for input_ids with dimensions 32x16
+[07/12/2021-11:54:57] [I] Created input binding for token_type_ids with dimensions 32x16
+[07/12/2021-11:54:57] [I] Created input binding for attention_mask with dimensions 32x16
+[07/12/2021-11:54:57] [I] Created input binding for position_ids with dimensions 16
+[07/12/2021-11:54:57] [I] Created output binding for output with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 466 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 584 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 702 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 820 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 938 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1056 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1174 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1292 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1410 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1528 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1646 with dimensions 32x16x768
+[07/12/2021-11:54:57] [I] Created output binding for 1650 with dimensions 32x768
+[07/12/2021-11:54:57] [I] Starting inference
+[07/12/2021-11:55:20] [I] Warmup completed 5 queries over 200 ms
+[07/12/2021-11:55:20] [I] Timing trace has 500 queries over 22.1602 s
+[07/12/2021-11:55:20] [I] 
+[07/12/2021-11:55:20] [I] === Trace details ===
+[07/12/2021-11:55:20] [I] Trace averages of 10 runs:
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 38.1754 ms - Host latency: 55.6564 ms (end to end 75.9526 ms, enqueue 1.37606 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 35.4343 ms - Host latency: 39.2381 ms (end to end 63.7629 ms, enqueue 1.37831 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.746 ms - Host latency: 41.7217 ms (end to end 70.0929 ms, enqueue 1.40546 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 47.0737 ms - Host latency: 87.8591 ms (end to end 109.245 ms, enqueue 1.18768 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.7953 ms - Host latency: 55.2887 ms (end to end 73.0928 ms, enqueue 1.3125 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.3971 ms - Host latency: 41.2462 ms (end to end 69.7053 ms, enqueue 1.28276 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 39.0759 ms - Host latency: 50.1606 ms (end to end 73.7158 ms, enqueue 1.39602 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 37.6572 ms - Host latency: 44.4786 ms (end to end 69.7621 ms, enqueue 1.51189 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 41.5916 ms - Host latency: 68.9821 ms (end to end 93.4088 ms, enqueue 1.37444 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.4207 ms - Host latency: 49.7486 ms (end to end 75.9597 ms, enqueue 1.42837 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.9335 ms - Host latency: 49.172 ms (end to end 76.3561 ms, enqueue 1.41147 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.6318 ms - Host latency: 40.9677 ms (end to end 64.5189 ms, enqueue 1.5585 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 36.2769 ms - Host latency: 42.2957 ms (end to end 69.4749 ms, enqueue 1.32104 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 39.9905 ms - Host latency: 57.9578 ms (end to end 87.5866 ms, enqueue 1.35796 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 38.0805 ms - Host latency: 60.6517 ms (end to end 85.0565 ms, enqueue 1.36616 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.8831 ms - Host latency: 34.3595 ms (end to end 62.5971 ms, enqueue 1.35854 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.8701 ms - Host latency: 34.5969 ms (end to end 62.3251 ms, enqueue 1.28804 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9952 ms - Host latency: 34.5891 ms (end to end 62.9707 ms, enqueue 1.31763 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 33.1981 ms - Host latency: 34.5011 ms (end to end 60.3721 ms, enqueue 1.40811 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 33.047 ms - Host latency: 34.3398 ms (end to end 66.059 ms, enqueue 1.3208 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.6787 ms - Host latency: 34.0055 ms (end to end 61.3969 ms, enqueue 1.36602 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9196 ms - Host latency: 35.4648 ms (end to end 62.3388 ms, enqueue 1.68779 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.986 ms - Host latency: 35.2961 ms (end to end 62.6839 ms, enqueue 1.73945 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.7377 ms - Host latency: 34.3892 ms (end to end 62.0627 ms, enqueue 1.40127 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9122 ms - Host latency: 34.5432 ms (end to end 61.906 ms, enqueue 1.53506 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9324 ms - Host latency: 34.4368 ms (end to end 60.9855 ms, enqueue 1.43457 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.7277 ms - Host latency: 34.1093 ms (end to end 59.2698 ms, enqueue 1.25195 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9386 ms - Host latency: 34.3168 ms (end to end 61.9858 ms, enqueue 1.03037 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9581 ms - Host latency: 34.6589 ms (end to end 63.0779 ms, enqueue 1.25156 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 33.0273 ms - Host latency: 34.8057 ms (end to end 62.5922 ms, enqueue 1.55352 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9469 ms - Host latency: 35.3623 ms (end to end 65.7292 ms, enqueue 1.57227 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.972 ms - Host latency: 35.0989 ms (end to end 62.5454 ms, enqueue 1.51455 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 33.0636 ms - Host latency: 34.5832 ms (end to end 61.2073 ms, enqueue 1.5209 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.703 ms - Host latency: 33.9524 ms (end to end 59.7174 ms, enqueue 1.3168 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9581 ms - Host latency: 34.9583 ms (end to end 61.6723 ms, enqueue 1.34883 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9459 ms - Host latency: 34.2423 ms (end to end 62.515 ms, enqueue 1.35391 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.7335 ms - Host latency: 34.3024 ms (end to end 62.6403 ms, enqueue 1.41865 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 32.9912 ms - Host latency: 34.2324 ms (end to end 62.6515 ms, enqueue 1.40537 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 34.5396 ms - Host latency: 38.2848 ms (end to end 67.2072 ms, enqueue 1.38066 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 42.6388 ms - Host latency: 71.1353 ms (end to end 97.9258 ms, enqueue 1.35742 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 41.6363 ms - Host latency: 58.4855 ms (end to end 80.1934 ms, enqueue 1.33203 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 45.0023 ms - Host latency: 81.5035 ms (end to end 100.017 ms, enqueue 1.35 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 41.6145 ms - Host latency: 75.0605 ms (end to end 92.2746 ms, enqueue 1.32637 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 39.7277 ms - Host latency: 68.0471 ms (end to end 88.0943 ms, enqueue 1.41074 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 37.866 ms - Host latency: 63.8676 ms (end to end 89.3096 ms, enqueue 1.35488 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 45.1873 ms - Host latency: 86.1408 ms (end to end 106.189 ms, enqueue 1.32344 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 42.7078 ms - Host latency: 56.3561 ms (end to end 85.7277 ms, enqueue 1.34531 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 38.6336 ms - Host latency: 55.6656 ms (end to end 80.0682 ms, enqueue 1.38398 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 40.6861 ms - Host latency: 74.8547 ms (end to end 90.8359 ms, enqueue 1.28164 ms)
+[07/12/2021-11:55:20] [I] Average on 10 runs - GPU latency: 42.7186 ms - Host latency: 73.2688 ms (end to end 94.2125 ms, enqueue 1.33301 ms)
+[07/12/2021-11:55:20] [I] 
+[07/12/2021-11:55:20] [I] === Performance summary ===
+[07/12/2021-11:55:20] [I] Throughput: 22.563 qps
+[07/12/2021-11:55:20] [I] Latency: min = 32.5439 ms, max = 113.485 ms, mean = 47.6648 ms, median = 35.8203 ms, percentile(99%) = 113.107 ms
+[07/12/2021-11:55:20] [I] End-to-End Host Latency: min = 33.0918 ms, max = 167.162 ms, mean = 73.221 ms, median = 66.5815 ms, percentile(99%) = 154.594 ms
+[07/12/2021-11:55:20] [I] Enqueue Time: min = 0.722656 ms, max = 2.54395 ms, mean = 1.38488 ms, median = 1.33984 ms, percentile(99%) = 2.2168 ms
+[07/12/2021-11:55:20] [I] H2D Latency: min = 0.0141602 ms, max = 2.76172 ms, mean = 0.21386 ms, median = 0.03125 ms, percentile(99%) = 2.36914 ms
+[07/12/2021-11:55:20] [I] GPU Compute Time: min = 23.3145 ms, max = 61.0332 ms, mean = 36.4673 ms, median = 33.0977 ms, percentile(99%) = 58.9465 ms
+[07/12/2021-11:55:20] [I] D2H Latency: min = 1.03613 ms, max = 57.9199 ms, mean = 10.9836 ms, median = 1.2627 ms, percentile(99%) = 57.3711 ms
+[07/12/2021-11:55:20] [I] Total Host Walltime: 22.1602 s
+[07/12/2021-11:55:20] [I] Total GPU Compute Time: 18.2337 s
+[07/12/2021-11:55:20] [I] Explanations of the performance metrics are printed in the verbose logs.
+[07/12/2021-11:55:20] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8001] # ./bin/trtexec --loadEngine=./engines/bert_16_dynamic.trt --iterations=500 --shapes=input_ids:32x16,token_type_ids:32x16,attention_mask:32x16
+[07/12/2021-11:55:20] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 1540, GPU 4698 (MiB)

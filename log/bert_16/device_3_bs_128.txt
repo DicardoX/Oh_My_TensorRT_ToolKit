@@ -1,0 +1,77 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8001] # ./bin/trtexec --loadEngine=./engines/bert_16_dynamic.trt --iterations=500 --shapes=input_ids:128x16,token_type_ids:128x16,attention_mask:128x16
+[07/12/2021-11:58:32] [I] === Model Options ===
+[07/12/2021-11:58:32] [I] Format: *
+[07/12/2021-11:58:32] [I] Model: 
+[07/12/2021-11:58:32] [I] Output:
+[07/12/2021-11:58:32] [I] === Build Options ===
+[07/12/2021-11:58:32] [I] Max batch: explicit
+[07/12/2021-11:58:32] [I] Workspace: 16 MiB
+[07/12/2021-11:58:32] [I] minTiming: 1
+[07/12/2021-11:58:32] [I] avgTiming: 8
+[07/12/2021-11:58:32] [I] Precision: FP32
+[07/12/2021-11:58:32] [I] Calibration: 
+[07/12/2021-11:58:32] [I] Refit: Disabled
+[07/12/2021-11:58:32] [I] Sparsity: Disabled
+[07/12/2021-11:58:32] [I] Safe mode: Disabled
+[07/12/2021-11:58:32] [I] Restricted mode: Disabled
+[07/12/2021-11:58:32] [I] Save engine: 
+[07/12/2021-11:58:32] [I] Load engine: ./engines/bert_16_dynamic.trt
+[07/12/2021-11:58:32] [I] NVTX verbosity: 0
+[07/12/2021-11:58:32] [I] Tactic sources: Using default tactic sources
+[07/12/2021-11:58:32] [I] timingCacheMode: local
+[07/12/2021-11:58:32] [I] timingCacheFile: 
+[07/12/2021-11:58:32] [I] Input(s)s format: fp32:CHW
+[07/12/2021-11:58:32] [I] Output(s)s format: fp32:CHW
+[07/12/2021-11:58:32] [I] Input build shape: input_ids=128x16+128x16+128x16
+[07/12/2021-11:58:32] [I] Input build shape: attention_mask=128x16+128x16+128x16
+[07/12/2021-11:58:32] [I] Input build shape: token_type_ids=128x16+128x16+128x16
+[07/12/2021-11:58:32] [I] Input calibration shapes: model
+[07/12/2021-11:58:32] [I] === System Options ===
+[07/12/2021-11:58:32] [I] Device: 0
+[07/12/2021-11:58:32] [I] DLACore: 
+[07/12/2021-11:58:32] [I] Plugins:
+[07/12/2021-11:58:32] [I] === Inference Options ===
+[07/12/2021-11:58:32] [I] Batch: Explicit
+[07/12/2021-11:58:32] [I] Input inference shape: token_type_ids=128x16
+[07/12/2021-11:58:32] [I] Input inference shape: attention_mask=128x16
+[07/12/2021-11:58:32] [I] Input inference shape: input_ids=128x16
+[07/12/2021-11:58:32] [I] Iterations: 500
+[07/12/2021-11:58:32] [I] Duration: 3s (+ 200ms warm up)
+[07/12/2021-11:58:32] [I] Sleep time: 0ms
+[07/12/2021-11:58:32] [I] Streams: 1
+[07/12/2021-11:58:32] [I] ExposeDMA: Disabled
+[07/12/2021-11:58:32] [I] Data transfers: Enabled
+[07/12/2021-11:58:32] [I] Spin-wait: Disabled
+[07/12/2021-11:58:32] [I] Multithreading: Disabled
+[07/12/2021-11:58:32] [I] CUDA Graph: Disabled
+[07/12/2021-11:58:32] [I] Separate profiling: Disabled
+[07/12/2021-11:58:32] [I] Time Deserialize: Disabled
+[07/12/2021-11:58:32] [I] Time Refit: Disabled
+[07/12/2021-11:58:32] [I] Skip inference: Disabled
+[07/12/2021-11:58:32] [I] Inputs:
+[07/12/2021-11:58:32] [I] === Reporting Options ===
+[07/12/2021-11:58:32] [I] Verbose: Disabled
+[07/12/2021-11:58:32] [I] Averages: 10 inferences
+[07/12/2021-11:58:32] [I] Percentile: 99
+[07/12/2021-11:58:32] [I] Dump refittable layers:Disabled
+[07/12/2021-11:58:32] [I] Dump output: Disabled
+[07/12/2021-11:58:32] [I] Profile: Disabled
+[07/12/2021-11:58:32] [I] Export timing to JSON file: 
+[07/12/2021-11:58:32] [I] Export output to JSON file: 
+[07/12/2021-11:58:32] [I] Export profile to JSON file: 
+[07/12/2021-11:58:32] [I] 
+[07/12/2021-11:58:32] [I] === Device Information ===
+[07/12/2021-11:58:32] [I] Selected Device: A100-PCIE-40GB MIG 1g.5gb
+[07/12/2021-11:58:32] [I] Compute Capability: 8.0
+[07/12/2021-11:58:32] [I] SMs: 14
+[07/12/2021-11:58:32] [I] Compute Clock Rate: 1.41 GHz
+[07/12/2021-11:58:32] [I] Device Global Memory: 4864 MiB
+[07/12/2021-11:58:32] [I] Shared Memory per SM: 164 KiB
+[07/12/2021-11:58:32] [I] Memory Bus Width: 640 bits (ECC enabled)
+[07/12/2021-11:58:32] [I] Memory Clock Rate: 1.215 GHz
+[07/12/2021-11:58:32] [I] 
+[07/12/2021-11:58:32] [I] TensorRT version: 8001
+[07/12/2021-11:58:34] [07/12/2021-11:58:35] [I] [TRT] [MemUsageChange] Init CUDA: CPU +581, GPU +4057, now: CPU 1366, GPU 4057 (MiB)
+[07/12/2021-11:58:35] [I] [TRT] Loaded engine size: 778 MB
+[07/12/2021-11:58:35] [I] [TRT] [MemUsageSnapshot] deserializeCudaEngine begin: CPU 1366 MiB, GPU 4057 MiB
+[07/12/2021-11:58:38] [07/12/2021-11:58:38] [07/12/2021-11:58:38] [07/12/2021-11:58:38] [07/12/2021-11:58:38] [07/12/2021-11:58:38] [07/12/2021-11:58:38] [07/12/2021-11:58:38] &&&& FAILED TensorRT.trtexec [TensorRT v8001] # ./bin/trtexec --loadEngine=./engines/bert_16_dynamic.trt --iterations=500 --shapes=input_ids:128x16,token_type_ids:128x16,attention_mask:128x16

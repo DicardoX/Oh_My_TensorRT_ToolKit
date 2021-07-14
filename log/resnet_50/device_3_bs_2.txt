@@ -1,0 +1,82 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8001] # ./bin/trtexec --loadEngine=./engines/resnet_50_dynamic.trt --iterations=500 --shapes=input:2x3x224x224
+[07/12/2021-11:51:24] [I] === Model Options ===
+[07/12/2021-11:51:24] [I] Format: *
+[07/12/2021-11:51:24] [I] Model: 
+[07/12/2021-11:51:24] [I] Output:
+[07/12/2021-11:51:24] [I] === Build Options ===
+[07/12/2021-11:51:24] [I] Max batch: explicit
+[07/12/2021-11:51:24] [I] Workspace: 16 MiB
+[07/12/2021-11:51:24] [I] minTiming: 1
+[07/12/2021-11:51:24] [I] avgTiming: 8
+[07/12/2021-11:51:24] [I] Precision: FP32
+[07/12/2021-11:51:24] [I] Calibration: 
+[07/12/2021-11:51:24] [I] Refit: Disabled
+[07/12/2021-11:51:24] [I] Sparsity: Disabled
+[07/12/2021-11:51:24] [I] Safe mode: Disabled
+[07/12/2021-11:51:24] [I] Restricted mode: Disabled
+[07/12/2021-11:51:24] [I] Save engine: 
+[07/12/2021-11:51:24] [I] Load engine: ./engines/resnet_50_dynamic.trt
+[07/12/2021-11:51:24] [I] NVTX verbosity: 0
+[07/12/2021-11:51:24] [I] Tactic sources: Using default tactic sources
+[07/12/2021-11:51:24] [I] timingCacheMode: local
+[07/12/2021-11:51:24] [I] timingCacheFile: 
+[07/12/2021-11:51:24] [I] Input(s)s format: fp32:CHW
+[07/12/2021-11:51:24] [I] Output(s)s format: fp32:CHW
+[07/12/2021-11:51:24] [I] Input build shape: input=2x3x224x224+2x3x224x224+2x3x224x224
+[07/12/2021-11:51:24] [I] Input calibration shapes: model
+[07/12/2021-11:51:24] [I] === System Options ===
+[07/12/2021-11:51:24] [I] Device: 0
+[07/12/2021-11:51:24] [I] DLACore: 
+[07/12/2021-11:51:24] [I] Plugins:
+[07/12/2021-11:51:24] [I] === Inference Options ===
+[07/12/2021-11:51:24] [I] Batch: Explicit
+[07/12/2021-11:51:24] [I] Input inference shape: input=2x3x224x224
+[07/12/2021-11:51:24] [I] Iterations: 500
+[07/12/2021-11:51:24] [I] Duration: 3s (+ 200ms warm up)
+[07/12/2021-11:51:24] [I] Sleep time: 0ms
+[07/12/2021-11:51:24] [I] Streams: 1
+[07/12/2021-11:51:24] [I] ExposeDMA: Disabled
+[07/12/2021-11:51:24] [I] Data transfers: Enabled
+[07/12/2021-11:51:24] [I] Spin-wait: Disabled
+[07/12/2021-11:51:24] [I] Multithreading: Disabled
+[07/12/2021-11:51:24] [I] CUDA Graph: Disabled
+[07/12/2021-11:51:24] [I] Separate profiling: Disabled
+[07/12/2021-11:51:24] [I] Time Deserialize: Disabled
+[07/12/2021-11:51:24] [I] Time Refit: Disabled
+[07/12/2021-11:51:24] [I] Skip inference: Disabled
+[07/12/2021-11:51:24] [I] Inputs:
+[07/12/2021-11:51:24] [I] === Reporting Options ===
+[07/12/2021-11:51:24] [I] Verbose: Disabled
+[07/12/2021-11:51:24] [I] Averages: 10 inferences
+[07/12/2021-11:51:24] [I] Percentile: 99
+[07/12/2021-11:51:24] [I] Dump refittable layers:Disabled
+[07/12/2021-11:51:24] [I] Dump output: Disabled
+[07/12/2021-11:51:24] [I] Profile: Disabled
+[07/12/2021-11:51:24] [I] Export timing to JSON file: 
+[07/12/2021-11:51:24] [I] Export output to JSON file: 
+[07/12/2021-11:51:24] [I] Export profile to JSON file: 
+[07/12/2021-11:51:24] [I] 
+[07/12/2021-11:51:24] [I] === Device Information ===
+[07/12/2021-11:51:24] [I] Selected Device: A100-PCIE-40GB MIG 1g.5gb
+[07/12/2021-11:51:24] [I] Compute Capability: 8.0
+[07/12/2021-11:51:24] [I] SMs: 14
+[07/12/2021-11:51:24] [I] Compute Clock Rate: 1.41 GHz
+[07/12/2021-11:51:24] [I] Device Global Memory: 4864 MiB
+[07/12/2021-11:51:24] [I] Shared Memory per SM: 164 KiB
+[07/12/2021-11:51:24] [I] Memory Bus Width: 640 bits (ECC enabled)
+[07/12/2021-11:51:24] [I] Memory Clock Rate: 1.215 GHz
+[07/12/2021-11:51:24] [I] 
+[07/12/2021-11:51:24] [I] TensorRT version: 8001
+[07/12/2021-11:51:26] [I] [TRT] [MemUsageChange] Init CUDA: CPU +503, GPU +0, now: CPU 608, GPU 4809 (MiB)
+[07/12/2021-11:51:26] [I] [TRT] Loaded engine size: 98 MB
+[07/12/2021-11:51:26] [I] [TRT] [MemUsageSnapshot] deserializeCudaEngine begin: CPU 608 MiB, GPU 4637 MiB
+[07/12/2021-11:51:27] [07/12/2021-11:51:27] [07/12/2021-11:51:27] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +653, GPU -1230, now: CPU 1261, GPU 1827 (MiB)
+[07/12/2021-11:51:28] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +369, GPU +2620, now: CPU 1630, GPU 4447 (MiB)
+[07/12/2021-11:51:28] [07/12/2021-11:51:28] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 1630, GPU 4429 (MiB)
+[07/12/2021-11:51:28] [I] [TRT] [MemUsageSnapshot] deserializeCudaEngine end: CPU 1630 MiB, GPU 4429 MiB
+[07/12/2021-11:51:28] [I] Engine loaded in 4.36683 sec.
+[07/12/2021-11:51:28] [I] [TRT] [MemUsageSnapshot] ExecutionContext creation begin: CPU 1532 MiB, GPU 4429 MiB
+[07/12/2021-11:51:28] [07/12/2021-11:51:28] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +10, now: CPU 1532, GPU 4439 (MiB)
+[07/12/2021-11:51:28] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +0, GPU +8, now: CPU 1532, GPU 4447 (MiB)
+[07/12/2021-11:51:28] [07/12/2021-11:51:28] [07/12/2021-11:51:28] [07/12/2021-11:51:28] [07/12/2021-11:51:28] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 1532, GPU 4429 (MiB)
+[07/12/2021-11:51:28] 
